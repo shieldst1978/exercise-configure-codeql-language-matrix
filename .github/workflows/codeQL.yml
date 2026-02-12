@@ -5,6 +5,12 @@ on:
     branches: [main]
 
 jobs:
+  analyze:
+    - name: Analyze
+    matrix:
+      language: ['javascript', 'python']
+   
+
   CodeQL-Build:
     runs-on: ubuntu-latest
 
@@ -23,3 +29,5 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
+   
+        
